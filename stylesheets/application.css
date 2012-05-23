@@ -1,23 +1,8 @@
-.hidden {
-  display: none !important;
-  visibility: hidden; }
-
-.visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px; }
-
-/* Hide visually and from screenreaders, but maintain layout */
-.invisible {
-  visibility: hidden; }
-
 /* --------------------------------------------------
-:: Global Reset & Standards
+Mixins - custom made by @stevehickeydsgn
+-------------------------------------------------- */
+/* --------------------------------------------------
+Global Reset & Standards
 -------------------------------------------------- */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -343,9 +328,7 @@ abbr {
   text-transform: none; }
 
 /* --------------------------------------------------
-:: Grid
-This is the mobile-friendly, responsive grid that
-lets Foundation work much of its magic.
+Grid
 -------------------------------------------------- */
 .container {
   padding: 0 20px; }
@@ -1904,98 +1887,110 @@ form.custom.nice div.custom.dropdown ul {
   -o-border-radius: 0 0 2px 2px;
   border-radius: 0 0 2px 2px; }
 
-/* CONTAINER
-================================================== */
+/* --------------------------------------------------
+Container
+-------------------------------------------------- */
 div.orbit-wrapper {
-  width: 1px;
-  height: 1px;
-  position: relative; }
-
-div.orbit {
-  width: 1px;
   height: 1px;
   position: relative;
-  overflow: hidden; }
+  width: 1px; }
+
+div.orbit {
+  height: 1px;
+  overflow: hidden;
+  position: relative;
+  width: 1px; }
 
 div.orbit.with-bullets {
   margin-bottom: 40px; }
 
 div.orbit .orbit-slide {
+  left: 0;
   max-width: 100%;
   position: absolute;
-  top: 0;
-  left: 0; }
+  top: 0; }
 
 div.orbit a.orbit-slide {
   border: none;
-  line-height: 0;
-  display: none; }
+  display: none;
+  line-height: 0; }
 
 div.orbit div.orbit-slide {
-  width: 100%;
-  height: 100%; }
+  height: 100%;
+  width: 100%; }
 
 /* Note: If your slider only uses content or anchors, you're going to want to put the width and height declarations on the ".orbit>div" and "div.orbit>a" tags in addition to just the .orbit-wrapper */
-/* TIMER
-================================================== */
+/* --------------------------------------------------
+Timer
+-------------------------------------------------- */
 div.orbit-wrapper div.timer {
-  width: 40px;
+  cursor: pointer;
   height: 40px;
+  opacity: 0.6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=($value * 100))";
+  filter: alpha(opacity=60);
+  zoom: 1;
   overflow: hidden;
   position: absolute;
-  top: 10px;
   right: 10px;
-  opacity: .6;
-  cursor: pointer;
+  top: 10px;
+  width: 40px;
   z-index: 31; }
 
 div.orbit-wrapper span.rotator {
+  background: url(../images/orbit/rotator-black.png) no-repeat;
   display: block;
-  width: 40px;
   height: 40px;
+  left: -20px;
   position: absolute;
   top: 0;
-  left: -20px;
-  background: url(../images/orbit/rotator-black.png) no-repeat;
+  width: 40px;
   z-index: 3; }
 
 div.orbit-wrapper span.mask {
   display: block;
-  width: 20px;
   height: 40px;
+  overflow: hidden;
   position: absolute;
-  top: 0;
   right: 0;
-  z-index: 2;
-  overflow: hidden; }
+  top: 0;
+  width: 20px;
+  z-index: 2; }
 
 div.orbit-wrapper span.rotator.move {
   left: 0; }
 
 div.orbit-wrapper span.mask.move {
-  width: 40px;
+  background: url(../images/orbit/timer-black.png) repeat 0 0;
   left: 0;
-  background: url(../images/orbit/timer-black.png) repeat 0 0; }
+  width: 40px; }
 
 div.orbit-wrapper span.pause {
+  background: url(../images/orbit/pause-black.png) no-repeat;
   display: block;
-  width: 40px;
   height: 40px;
+  left: 0;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=($value * 100))";
+  filter: alpha(opacity=0);
+  zoom: 1;
   position: absolute;
   top: 0;
-  left: 0;
-  background: url(../images/orbit/pause-black.png) no-repeat;
-  z-index: 4;
-  opacity: 0; }
+  width: 40px;
+  z-index: 4; }
 
 div.orbit-wrapper span.pause.active {
   background: url(../images/orbit/pause-black.png) no-repeat 0 -40px; }
 
 div.orbit-wrapper div.timer:hover span.pause, div.orbit-wrapper span.pause.active {
-  opacity: 1; }
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=($value * 100))";
+  filter: alpha(opacity=100);
+  zoom: 1; }
 
-/* CAPTIONS
-================================================== */
+/* --------------------------------------------------
+Captions
+-------------------------------------------------- */
 .orbit-caption {
   display: none;
   font-family: "HelveticaNeue", "Helvetica-Neue", Helvetica, Arial, sans-serif; }
@@ -2003,30 +1998,31 @@ div.orbit-wrapper div.timer:hover span.pause, div.orbit-wrapper span.pause.activ
 .orbit-wrapper .orbit-caption {
   background: black;
   background: rgba(0, 0, 0, 0.6);
-  z-index: 30;
+  bottom: 0;
   color: white;
-  text-align: center;
-  padding: 7px 0;
   font-size: 13px;
+  padding: 7px 0;
   position: absolute;
   right: 0;
-  bottom: 0;
-  width: 100%; }
+  text-align: center;
+  width: 100%;
+  z-index: 30; }
 
-/* DIRECTIONAL NAV
-================================================== */
+/* --------------------------------------------------
+Directional Nav
+-------------------------------------------------- */
 div.orbit-wrapper div.slider-nav {
   display: block; }
 
 div.orbit-wrapper div.slider-nav span {
-  width: 78px;
+  cursor: pointer;
   height: 100px;
-  text-indent: -9999px;
-  position: absolute;
-  z-index: 30;
-  top: 50%;
   margin-top: -50px;
-  cursor: pointer; }
+  position: absolute;
+  text-indent: -9999px;
+  top: 50%;
+  width: 78px;
+  z-index: 30; }
 
 div.orbit-wrapper div.slider-nav span.right {
   background: url(../images/orbit/right-arrow.png);
@@ -2036,47 +2032,49 @@ div.orbit-wrapper div.slider-nav span.left {
   background: url(../images/orbit/left-arrow.png);
   left: 0; }
 
-/* BULLET NAV
-================================================== */
+/* --------------------------------------------------
+Bullet Nav
+-------------------------------------------------- */
 ul.orbit-bullets {
-  position: absolute;
-  z-index: 30;
-  list-style: none;
   bottom: -40px;
   left: 50%;
+  list-style: none;
   margin-left: -50px;
-  padding: 0; }
+  padding: 0;
+  position: absolute;
+  z-index: 30; }
 
 ul.orbit-bullets li {
-  float: left;
-  margin-left: 5px;
+  background: url(../images/orbit/bullets.jpg) no-repeat 4px 0;
   cursor: pointer;
   color: #999999;
-  text-indent: -9999px;
-  background: url(../images/orbit/bullets.jpg) no-repeat 4px 0;
-  width: 13px;
+  float: left;
   height: 12px;
-  overflow: hidden; }
+  margin-left: 5px;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 13px; }
 
 ul.orbit-bullets li.active {
-  color: #262626;
-  background-position: -8px 0; }
+  background-position: -8px 0;
+  color: #262626; }
 
 ul.orbit-bullets li.has-thumb {
   background: none;
-  width: 100px;
-  height: 75px; }
+  height: 75px;
+  width: 100px; }
 
 ul.orbit-bullets li.active.has-thumb {
   background-position: 0 0;
   border-top: 2px solid black; }
 
-/* FLUID LAYOUT
-================================================== */
+/* --------------------------------------------------
+Fluid Layout
+-------------------------------------------------- */
 div.orbit img.fluid-placeholder {
-  visibility: hidden;
-  position: static;
   display: block;
+  position: static;
+  visibility: hidden;
   width: 100%; }
 
 div.orbit,
@@ -2084,33 +2082,33 @@ div.orbit-wrapper {
   width: 100% !important; }
 
 ul.orbit-bullets {
-  position: absolute;
-  z-index: 30;
-  list-style: none;
   bottom: -50px;
   left: 50%;
+  list-style: none;
   margin-left: -50px;
-  padding: 0; }
+  padding: 0;
+  position: absolute;
+  z-index: 30; }
 
 ul.orbit-bullets li {
-  float: left;
-  margin-left: 5px;
-  cursor: pointer;
-  color: #999999;
-  text-indent: -9999px;
   background: url(../images/orbit/bullets.jpg) no-repeat 4px 0;
-  width: 13px;
+  color: #999999;
+  cursor: pointer;
+  float: left;
   height: 12px;
-  overflow: hidden; }
+  margin-left: 5px;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 13px; }
 
 ul.orbit-bullets li.has-thumb {
   background: none;
-  width: 100px;
-  height: 75px; }
+  height: 75px;
+  width: 100px; }
 
 ul.orbit-bullets li.active {
-  color: #262626;
-  background-position: -8px 0; }
+  background-position: -8px 0;
+  color: #262626; }
 
 ul.orbit-bullets li.active.has-thumb {
   background-position: 0 0;
@@ -2122,7 +2120,6 @@ ul.orbit-bullets li.active.has-thumb {
 
 div.caption {
   background: transparent;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
   zoom: 1; }
 
 /* --------------------------------------------------
@@ -2273,25 +2270,27 @@ Grid
 /* Mobile */
 @media only screen and (max-width: 767px) {
   body {
-    -webkit-text-size-adjust: none;
-    -ms-text-size-adjust: none;
-    width: 100%;
-    min-width: 0;
     margin-left: 0;
     margin-right: 0;
+    min-width: 0;
     padding-left: 0;
-    padding-right: 0; }
+    padding-right: 0;
+    width: 100%;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -o-text-size-adjust: none;
+    text-size-adjust: none; }
 
   .container {
-    min-width: 0;
     margin-left: 0;
-    margin-right: 0; }
+    margin-right: 0;
+    min-width: 0; }
 
   .row {
-    width: 100%;
-    min-width: 0;
     margin-left: 0;
-    margin-right: 0; }
+    margin-right: 0;
+    min-width: 0;
+    width: 100%; }
 
   .row .row .column,
   .row .row .columns {
@@ -2299,15 +2298,15 @@ Grid
 
   .column,
   .columns {
-    width: auto !important;
     float: none;
     margin-left: 0;
-    margin-right: 0; }
+    margin-right: 0;
+    width: auto !important; }
 
   .column:last-child,
   .columns:last-child {
-    margin-right: 0;
-    float: none; }
+    float: none;
+    margin-right: 0; }
 
   [class*="column"] + [class*="column"]:last-child {
     float: none; }
@@ -2376,11 +2375,11 @@ Grid
   .row .phone-two,
   .row .phone-three,
   .row .phone-four {
-    margin-left: 4.4%;
     float: left;
+    margin-left: 4.4%;
     min-height: 1px;
-    position: relative;
-    padding: 0; }
+    padding: 0;
+    position: relative; }
 
   .row .phone-one {
     width: 21.68% !important; }
@@ -2420,8 +2419,8 @@ Block Grids
 
   .block-grid.mobile > li {
     float: none;
-    width: 100%;
-    margin-left: 0; } }
+    margin-left: 0;
+    width: 100%; } }
 /* --------------------------------------------------
 Mobile Visibility Affordances
 ---------------------------------------------------*/
@@ -2526,9 +2525,9 @@ Forms
   form.nice input.input-text.oversize,
   form.nice textarea {
     display: block;
-    width: 100%;
+    font-size: 18px;
     padding: 6px 2% 4px;
-    font-size: 18px; }
+    width: 100%; }
 
   form.nice div.form-field input,
   form.nice div.form-field input.oversize,
@@ -2543,8 +2542,8 @@ Forms
 
   form.nice div.form-field.error small,
   form.nice small.error {
-    padding: 6px 2%;
-    display: block; }
+    display: block;
+    padding: 6px 2%; }
 
   form.nice div.form-field.error .small + small,
   form.nice .small + .error {
@@ -2571,17 +2570,17 @@ UI
 
   button.button,
   input[type="submit"].button {
-    width: 100%;
+    margin-bottom: 5px;
     padding-left: 0;
     padding-right: 0;
-    margin-bottom: 5px; } }
+    width: 100%; } }
 /* Tabs */
 @media only screen and (max-width: 767px) {
   dl.tabs.mobile,
   dl.nice.tabs.mobile {
-    width: auto;
+    height: auto;
     margin: 20px -20px 40px;
-    height: auto; }
+    width: auto; }
 
   dl.tabs.mobile dt,
   dl.tabs.mobile dd,
@@ -2591,44 +2590,44 @@ UI
     height: auto; }
 
   dl.tabs.mobile dd a {
-    display: block;
-    width: auto;
-    height: auto;
-    padding: 18px 20px;
-    line-height: 1;
+    background: #e5e5e5;
     border: solid 0 #cccccc;
     border-width: 1px 0 0;
-    margin: 0;
     color: #595959;
-    background: #e5e5e5;
+    display: block;
     font-size: 15px;
-    font-size: 1.5rem; }
+    font-size: 1.5rem;
+    height: auto;
+    line-height: 1;
+    margin: 0;
+    padding: 18px 20px;
+    width: auto; }
 
   dl.tabs.mobile dd a.active {
+    border-width: 1px 0 0;
     height: auto;
-    margin: 0;
-    border-width: 1px 0 0; }
+    margin: 0; }
 
   .nice.tabs.mobile {
     border-bottom: solid 1px #cccccc;
     height: auto; }
 
   .nice.tabs.mobile dd a {
-    padding: 18px 20px;
+    background: white;
     border: none;
     border-left: none;
     border-right: none;
     border-top: 1px solid #cccccc;
-    background: white; }
+    padding: 18px 20px; }
 
   .nice.tabs.mobile dd a.active {
-    border: none;
     background: #00a6fc;
+    border: none;
     color: white;
+    height: auto;
     margin: 0;
     position: static;
-    top: 0;
-    height: auto; }
+    top: 0; }
 
   .nice.tabs.mobile dd:first-child a.active {
     margin: 0; }
@@ -2644,9 +2643,9 @@ UI
     padding: 18px 20px; }
 
   dl.tabs.mobile + ul.contained {
+    border-width: 0 0 1px 0;
     margin-left: -20px;
-    margin-right: -20px;
-    border-width: 0 0 1px 0; } }
+    margin-right: -20px; } }
 /* Nav Bar */
 /* Modernizr-enabled tablet targeting */
 @media only screen and (max-width: 1280px) and (min-width: 768px) {
@@ -2661,52 +2660,53 @@ UI
     height: auto; }
 
   .nav-bar > li {
-    float: none;
+    border-right: none;
     display: block;
-    border-right: none; }
+    float: none; }
 
   .nav-bar > li > a.main {
-    text-align: left;
+    border-right: none;
     border-top: 1px solid #d9d9d9;
-    border-right: none; }
+    text-align: left; }
 
   .nav-bar > li:first-child > a.main {
     border-top: none; }
 
   .nav-bar > li.has-flyout > a.flyout-toggle {
+    border-left: 1px dashed #e5e5e5;
+    display: block;
+    padding: 22px;
     position: absolute;
     right: 0;
     top: 0;
-    padding: 22px;
-    z-index: 2;
-    border-left: 1px dashed #e5e5e5;
-    display: block; }
+    z-index: 2; }
 
   .nav-bar > li.has-flyout > a.flyout-toggle span {
-    content: "";
-    width: 0;
-    height: 0;
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
     border-top: 4px solid #00a6fc;
-    display: block; }
+    content: "";
+    display: block;
+    height: 0;
+    width: 0; }
 
   .nav-bar > li.has-flyout > a.flyout-toggle:hover span {
     border-top-color: #191919; }
 
   .flyout {
-    position: relative;
-    width: auto;
-    top: auto;
+    border-width: 1px 1px 0 1px;
     margin-right: -2px;
-    border-width: 1px 1px 0 1px; }
+    position: relative;
+    top: auto;
+    width: auto; }
 
   .flyout.right {
     float: none;
-    right: auto;
-    left: -1px; }
+    left: -1px;
+    right: auto; }
 
-  .flyout.small, .flyout.large {
+  .flyout.small,
+  .flyout.large {
     width: auto; }
 
   .flyout p:last-child {
@@ -2725,14 +2725,16 @@ UI
   .tooltip.right > .nub {
     border-color: transparent transparent black transparent;
     border-color: transparent transparent rgba(0, 0, 0, 0.85) transparent;
-    top: -12px;
-    left: 10px; } }
+    left: 10px;
+    top: -12px; } }
 /* Video */
 @media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px), only screen and (max-width: 767px) {
   .flex-video {
     padding-top: 0; } }
-/* This is for all IE specfific style less than IE9. We hate IE. */
-div.panel {
+/* --------------------------------------------------
+This is for all IE specfific style less than IE9. We hate IE.
+-------------------------------------------------- */
+.lt-ie8 div.panel {
   border: 1px solid #cccccc; }
 
 .lt-ie8 .nav-bar li.has-flyout a {

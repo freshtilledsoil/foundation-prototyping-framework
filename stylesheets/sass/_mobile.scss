@@ -45,25 +45,27 @@ Grid
 /* Mobile */
 @media only screen and (max-width: 767px) {
   body {
-    -webkit-text-size-adjust: none;
-    -ms-text-size-adjust: none;
-    width: 100%;
-    min-width: 0;
     margin-left: 0;
     margin-right: 0;
+    min-width: 0;
     padding-left: 0;
     padding-right: 0;
+    width: 100%;
+    -webkit-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+         -o-text-size-adjust: none;
+            text-size-adjust: none;
   }
   .container {
-    min-width: 0;
     margin-left: 0;
     margin-right: 0;
+    min-width: 0;
   }
   .row {
-    width: 100%;
-    min-width: 0;
     margin-left: 0;
     margin-right: 0;
+    min-width: 0;
+    width: 100%;
   }
   .row .row .column,
   .row .row .columns {
@@ -71,15 +73,15 @@ Grid
   }
   .column,
   .columns {
-    width: auto !important;
     float: none;
     margin-left: 0;
     margin-right: 0;
+    width: auto !important;
   }
   .column:last-child,
   .columns:last-child {
-    margin-right: 0;
     float: none;
+    margin-right: 0;
   }
   [class*="column"] + [class*="column"]:last-child {
     float: none;
@@ -88,8 +90,8 @@ Grid
   .columns:before,
   .column:after,
   .columns:after {
-    content:"";
-    display:table;
+    content: "";
+    display: table;
   }
   .column:after,
   .columns:after {
@@ -148,11 +150,11 @@ Grid
   .row .phone-two,
   .row .phone-three,
   .row .phone-four {
-    margin-left: 4.4%;
     float: left;
+    margin-left: 4.4%;
     min-height: 1px;
-    position: relative;
     padding: 0;
+    position: relative;
   }
   .row .phone-one {
     width: 21.68% !important;
@@ -195,8 +197,8 @@ Block Grids
   }
   .block-grid.mobile > li {
     float: none;
-    width: 100%;
     margin-left: 0;
+    width: 100%;
   }
 }
 
@@ -314,9 +316,9 @@ Forms
   form.nice input.input-text.oversize,
   form.nice textarea {
     display: block;
-    width: 100%;
-    padding: 6px 2% 4px;
     font-size: 18px;
+    padding: 6px 2% 4px;
+    width: 100%;
   }
   form.nice div.form-field input,
   form.nice div.form-field input.oversize,
@@ -327,8 +329,8 @@ Forms
   }
   form.nice div.form-field.error small,
   form.nice small.error {
-    padding: 6px 2%;
     display: block;
+    padding: 6px 2%;
   }
   form.nice div.form-field.error .small + small,
   form.nice .small + .error {
@@ -358,10 +360,10 @@ UI
   }
   button.button,
   input[type="submit"].button {
-    width: 100%;
+    margin-bottom: 5px;
     padding-left: 0;
     padding-right: 0;
-    margin-bottom: 5px;
+    width: 100%;
   }
 }
 
@@ -369,9 +371,9 @@ UI
 @media only screen and (max-width: 767px) {
   dl.tabs.mobile,
   dl.nice.tabs.mobile {
-    width: auto;
-    margin: 20px -20px 40px;
     height: auto;
+    margin: 20px -20px 40px;
+    width: auto;
   }
   dl.tabs.mobile dt,
   dl.tabs.mobile dd,
@@ -381,44 +383,44 @@ UI
     height: auto;
   }
   dl.tabs.mobile dd a {
-    display: block;
-    width: auto;
-    height: auto;
-    padding: 18px 20px;
-    line-height: 1;
+    background: $gray10;
     border: solid 0 $gray20;
     border-width: 1px 0 0;
-    margin: 0;
     color: $gray65;
-    background: $gray10;
+    display: block;
     font-size: 15px;
     font-size: 1.5rem;
+    height: auto;
+    line-height: 1;
+    margin: 0;
+    padding: 18px 20px;
+    width: auto;
   }
   dl.tabs.mobile dd a.active {
+    border-width: 1px 0 0;
     height: auto;
     margin: 0;
-    border-width: 1px 0 0;
   }
   .nice.tabs.mobile {
     border-bottom: solid 1px $gray20;
     height: auto;
   }
   .nice.tabs.mobile dd a {
-    padding: 18px 20px;
+    background: $white;
     border: none;
     border-left: none;
     border-right: none;
     border-top: 1px solid $gray20;
-    background: $white;
+    padding: 18px 20px;
   }
   .nice.tabs.mobile dd a.active {
-    border: none;
     background: $blue;
+    border: none;
     color: $white;
+    height: auto;
     margin: 0;
     position: static;
     top: 0;
-    height: auto;
   }
   .nice.tabs.mobile dd:first-child a.active {
     margin: 0;
@@ -434,9 +436,9 @@ UI
     padding: 18px 20px;
   }
   dl.tabs.mobile + ul.contained {
+    border-width: 0 0 1px 0;
     margin-left: -20px;
     margin-right: -20px;
-    border-width: 0 0 1px 0;
   }
 }
 
@@ -456,52 +458,53 @@ UI
     height: auto;
   }
   .nav-bar > li {
-    float: none;
-    display: block;
     border-right: none;
+    display: block;
+    float: none;
   }
   .nav-bar > li > a.main {
-    text-align: left;
-    border-top: 1px solid $gray15;
     border-right: none;
+    border-top: 1px solid $gray15;
+    text-align: left;
   }
   .nav-bar > li:first-child > a.main {
     border-top: none;
   }
   .nav-bar > li.has-flyout > a.flyout-toggle {
+    border-left: 1px dashed $gray10;
+    display: block;
+    padding: 22px;
     position: absolute;
     right: 0;
     top: 0;
-    padding: 22px;
     z-index: 2;
-    border-left: 1px dashed $gray10;
-    display: block;
   }
   .nav-bar > li.has-flyout > a.flyout-toggle span {
-    content: "";
-    width: 0;
-    height: 0;
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
     border-top: 4px solid $blue;
+    content: "";
     display: block;
+    height: 0;
+    width: 0;
   }
   .nav-bar > li.has-flyout > a.flyout-toggle:hover span {
     border-top-color: $gray90;
   }
   .flyout {
-    position: relative;
-    width: auto;
-    top: auto;
-    margin-right: -2px;
     border-width: 1px 1px 0 1px;
+    margin-right: -2px;
+    position: relative;
+    top: auto;
+    width: auto;
   }
   .flyout.right {
     float: none;
-    right: auto;
     left: -1px;
+    right: auto;
   }
-  .flyout.small, .flyout.large {
+  .flyout.small,
+  .flyout.large {
     width: auto;
   }
   .flyout p:last-child {
@@ -523,8 +526,8 @@ UI
   .tooltip.right > .nub {
     border-color: transparent transparent $black transparent;
     border-color: transparent transparent rgba($black, 0.85) transparent;
-    top: -12px;
     left: 10px;
+    top: -12px;
   }
 }
 
