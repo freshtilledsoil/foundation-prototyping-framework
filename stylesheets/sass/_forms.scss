@@ -5,16 +5,16 @@ form {
   margin: 0 0 18px;
 }
 form label {
+  cursor: pointer;
   display: block;
   font-size: 13px;
   line-height: 18px;
-  cursor: pointer;
   margin-bottom: 9px;
 }
 input.input-text,
 textarea {
-  border-right: 1px solid $gray30;
   border-bottom: 1px solid $gray30;
+  border-right: 1px solid $gray30;
 }
 input.input-text,
 textarea, select {
@@ -31,12 +31,13 @@ select + div.dropdown {
 textarea {
   max-width: 100%;
 }
+
 /* Text input and textarea font and padding */
 input.input-text,
 textarea {
+  background: $white;
   font-size: 13px;
   padding: 4px 3px 2px;
-  background: $white;
 }
 input.input-text:focus,
 textarea:focus {
@@ -51,21 +52,24 @@ input.input-text:focus,
 textarea:focus {
   background: $gray05;
 }
+
 /* Text input and textarea, disabled */
 input.input-text[disabled],
 textarea[disabled] {
   background-color: $gray15;
 }
+
 /* Inlined Label Style */
 input.placeholder,
 textarea.placeholder {
   color: $gray45;
 }
+
 /* Text input and textarea sizes */
 input.input-text,
 textarea {
-  width: 254px;
   @include box-sizing(border-box);
+  width: 254px;
 }
 input.small,
 textarea.small {
@@ -83,6 +87,7 @@ input.expand,
 textarea.expand {
   width: 100%;
 }
+
 /* Lock textareas so they can't be resized beyond their set width in webkit */
 textarea.locked {
   max-width: 254px;
@@ -96,24 +101,27 @@ textarea.locked.large {
 textarea.locked.expand {
   max-width: 100%;
 }
+
 /* Fieldsets */
 form fieldset {
-  padding: 9px 9px 2px 9px;
   border: solid 1px $gray15;
   margin: 18px 0;
+  padding: 9px 9px 2px 9px;
 }
+
 /* Inlined Radio & Checkbox */
 .form-field input[type=radio],
 div.form-field input[type=checkbox] {
   display: inline;
-  width:auto;
   margin-bottom:0;
+  width:auto;
 }
+
 /* Errors */
 .form-field.error input,
 input.input-text.red {
-  border-color: darken($red, 15%);
   background-color: rgba($red, 0.15);
+  border-color: darken($red, 15%);
 }
 .form-field.error label,
 label.red {
@@ -121,13 +129,13 @@ label.red {
 }
 .form-field.error small,
 small.error {
-  margin-top: -6px;
-  display: block;
-  margin-bottom: 9px;
-  font-size: 11px;
-  color: darken($red, 15%);
-  width: 254px;
   @include box-sizing(border-box);
+  color: darken($red, 15%);
+  display: block;
+  font-size: 11px;
+  margin-bottom: 9px;
+  margin-top: -6px;
+  width: 254px;
 }
 .small + small.error {
   width: 134px;
@@ -153,6 +161,7 @@ small.error {
 .expand.oversize + small.error {
   width: 100%;
 }
+
 /* -----------------------------------------
 Nicer Forms
 ----------------------------------------- */
@@ -165,16 +174,17 @@ form.nice textarea {
 form.nice div.form-field input,
 form.nice input.input-text,
 form.nice textarea {
-  font-size: 13px;
-  padding: 6px 3px 4px;
-  outline: none !important;
   background: url(../images/misc/input-bg.png) $white;
+  font-size: 13px;
+  outline: none !important;
+  padding: 6px 3px 4px;
 }
 form.nice div.form-field input:focus,
 form.nice input.input-text:focus,
 form.nice textarea:focus {
   background-color: $gray05;
 }
+
 /* Text input and textarea, disabled */
 form.nice div.form-field input[disabled],
 form.nice input.input-text[disabled],
@@ -187,20 +197,20 @@ form.nice fieldset {
 form.nice div.form-field input[type=radio],
 form.nice div.form-field input[type=checkbox] {
   display: inline;
-  width:auto;
   margin-bottom:0;
+  width:auto;
 }
 form.nice div.form-field.error small,
 form.nice small.error {
-  padding: 6px 4px;
-  border: solid 0 darken($red, 15%);
-  border-width: 0 1px 1px 1px;
-  margin-top: -10px;
   background: darken($red, 15%);
+  border: solid 0 darken($red, 15%);
+  @include border-radius(0 0 2px 2px);
+  border-width: 0 1px 1px 1px;
   color: $white;
   font-size: 12px;
   font-weight: bold;
-  @include border-radius(0 0 2px 2px);
+  margin-top: -10px;
+  padding: 6px 4px;
 }
 form.nice div.form-field.error .small + small,
 form.nice .small + small.error {
@@ -226,17 +236,18 @@ form.nice div.form-field.error .large.oversize + small,
 form.nice .large.oversize + small.error {
   width: 436px;
 }
+
 /* -----------------------------------------
 Custom Forms
 ----------------------------------------- */
 form.custom span.custom {
+  border: solid 1px $gray20;
+  background: url(../images/misc/custom-form-sprites.png) 0 0 no-repeat;
   @include inline-block;
-  width: 14px;
   height: 14px;
   position: relative;
   top: 2px;
-  border: solid 1px $gray20;
-  background: url(../images/misc/custom-form-sprites.png) 0 0 no-repeat;
+  width: 14px;
 }
 form.custom span.custom.radio {
   @include border-radius(7px);
@@ -249,62 +260,61 @@ form.custom span.custom.checkbox.checked {
 }
 form.custom div.custom.dropdown {
   display: block;
-  position: relative;
-  width: auto;
   height: 28px;
   margin-bottom: 9px;
   margin-top: 2px;
+  position: relative;
+  width: auto;
 }
 form.custom div.custom.dropdown a.current {
+  background-color: $white;
+  border: solid 1px $gray15;
+  color: $gray90;
   display: block;
-  width: auto;
   line-height: 26px;
   min-height: 26px;
   padding: 0 38px 0 6px;
-  border: solid 1px #ddd;
-  color: $gray90;
-  background-color: $white;
+  width: auto;
   word-wrap: nowrap;
 }
 form.custom div.custom.dropdown a.selector {
-  position: absolute;
-  width: 26px;
-  height: 26px;
-  display: block;
   background: url(../images/misc/custom-form-sprites.png) -14px 1px no-repeat;
+  border: solid 1px $gray15;
+  display: block;
+  height: 26px;
+  position: absolute;
   right: 0;
   top: 0;
-  border: solid 1px $gray15;
+  width: 26px;
 }
 form.custom div.custom.dropdown:hover a.selector,
 form.custom div.custom.dropdown.open a.selector {
   background-position: -14px -26px;
 }
 form.custom div.custom.dropdown ul {
-  position: absolute;
-  width: auto;
-  display: none;
-  margin: 0;
-  left: 0;
-  top: 27px;
-  margin: 0;
-  padding: 0;
   background: $white;
   background: rgba($white, 0.95);
-  border: solid 1px #ddd;
+  border: solid 1px $gray15;
+  display: none;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 27px;
+  width: auto;
 }
 form.custom div.custom.dropdown ul li {
   cursor: pointer;
-  padding: 3px 38px 3px 6px;
-  min-height: 18px;
   margin: 0;
+  min-height: 18px;
+  padding: 3px 38px 3px 6px;
   white-space: nowrap
 }
 form.custom div.custom.dropdown ul li.selected {
   background: url(../images/misc/custom-form-sprites.png) right -52px no-repeat;
 }
 form.custom div.custom.dropdown ul li:hover {
-  background-color: #2a85e8;
+  background-color: $blueDark;
   color: $white;
 }
 form.custom div.custom.dropdown ul li.selected:hover {
@@ -339,13 +349,15 @@ form.custom div.custom.dropdown.open.large ul {
   width: 432px !important;
 }
 form.custom div.custom.dropdown.open.expand ul {
-  width: 100% !important;
   @include box-sizing(border-box);
+  width: 100% !important;
 }
+
 /* Custom input, disabled */
 form.custom .custom.disabled {
   background-color: $gray15;
 }
+
 /* -----------------------------------------
 Nicer Custom Forms
 ----------------------------------------- */
@@ -353,13 +365,13 @@ form.custom.nice span.custom.checkbox {
   @include border-radius(2px);
 }
 form.custom.nice div.custom.dropdown a.current {
-  @include border-radius(2px);
   background-image: url(../images/misc/input-bg-outset.png);
   background-position: bottom right;
+  @include border-radius(2px);
 }
 form.custom.nice div.custom.dropdown a.selector {
-  height: 27px;
   border-width: 0 0 0 1px;
+  height: 27px;
 }
 form.custom.nice div.custom.dropdown ul {
   @include border-radius(0 0 2px 2px);
