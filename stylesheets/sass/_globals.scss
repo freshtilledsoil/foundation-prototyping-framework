@@ -14,10 +14,10 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-  margin: 0;
-  padding: 0;
   border: 0;
   font: inherit;
+  margin: 0;
+  padding: 0;
   vertical-align: baseline;
 }
 html {
@@ -54,13 +54,13 @@ sup {
 }
 body {
   background: $white;
+  color: $gray65;
   font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 13px;
   font-size: 1.3rem;
-  line-height: 18px;
-  color: $gray65;
-  position: relative;
   -webkit-font-smoothing: antialiased;
+  line-height: 18px;
+  position: relative;
 }
 
 /* --------------------------------------------------
@@ -68,8 +68,8 @@ body {
 -------------------------------------------------- */
 a {
   color: $linkColor;
-  text-decoration: none;
   line-height: inherit;
+  text-decoration: none;
 }
 a:hover {
   color: $linkColorHover;
@@ -141,10 +141,10 @@ table tfoot tr td {
 }
 table thead tr th,
 table tfoot tr td {
-  padding: 8px 10px 9px;
+  color: $gray90;
   font-size: 14px;
   font-weight: bold;
-  color: $gray90;
+  padding: 8px 10px 9px;
 }
 table thead tr th:first-child,
 table tfoot tr td:first-child {
@@ -162,10 +162,10 @@ table tbody tr:nth-child(even) {
   background: $gray10;
 }
 table tbody tr td {
+  border: none;
   color: $gray80;
   padding: 9px 10px;
   vertical-align: top;
-  border: none;
 }
 
 /* -------------------------------------------------- 

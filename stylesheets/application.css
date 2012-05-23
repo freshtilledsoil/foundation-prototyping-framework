@@ -32,10 +32,10 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-  margin: 0;
-  padding: 0;
   border: 0;
   font: inherit;
+  margin: 0;
+  padding: 0;
   vertical-align: baseline; }
 
 html {
@@ -72,21 +72,21 @@ sup {
 
 body {
   background: white;
+  color: #595959;
   font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 13px;
   font-size: 1.3rem;
+  -webkit-font-smoothing: antialiased;
   line-height: 18px;
-  color: #595959;
-  position: relative;
-  -webkit-font-smoothing: antialiased; }
+  position: relative; }
 
 /* --------------------------------------------------
 :: Links
 -------------------------------------------------- */
 a {
   color: #2a85e8;
-  text-decoration: none;
-  line-height: inherit; }
+  line-height: inherit;
+  text-decoration: none; }
 
 a:hover {
   color: #135fb2; }
@@ -160,10 +160,10 @@ table tfoot tr td {
 
 table thead tr th,
 table tfoot tr td {
-  padding: 8px 10px 9px;
+  color: #191919;
   font-size: 14px;
   font-weight: bold;
-  color: #191919; }
+  padding: 8px 10px 9px; }
 
 table thead tr th:first-child,
 table tfoot tr td:first-child {
@@ -181,10 +181,10 @@ table tbody tr:nth-child(even) {
   background: #e5e5e5; }
 
 table tbody tr td {
+  border: none;
   color: #333333;
   padding: 9px 10px;
-  vertical-align: top;
-  border: none; }
+  vertical-align: top; }
 
 /* -------------------------------------------------- 
 :: Misc
