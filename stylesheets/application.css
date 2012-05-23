@@ -351,10 +351,10 @@ lets Foundation work much of its magic.
   padding: 0 20px; }
 
 .row {
-  width: 100%;
+  margin: 0 auto;
   max-width: 980px;
   min-width: 727px;
-  margin: 0 auto; }
+  width: 100%; }
 
 /* To fix the grid into a certain size, set max-width to width */
 .row .row {
@@ -362,8 +362,8 @@ lets Foundation work much of its magic.
 
 .column,
 .columns {
-  margin-left: 4.4%;
   float: left;
+  margin-left: 4.4%;
   min-height: 1px;
   position: relative; }
 
@@ -538,15 +538,15 @@ lets Foundation work much of its magic.
 img,
 object,
 embed {
-  max-width: 100%;
-  height: auto; }
+  height: auto;
+  max-width: 100%; }
 
 img {
   -ms-interpolation-mode: bicubic; }
 
 #map_canvas img,
 .map_canvas img {
-  max-width: none!important; }
+  max-width: none !important; }
 
 /* Nicolas Gallagher's micro clearfix */
 .row:before,
@@ -564,8 +564,8 @@ img {
 .clearfix {
   zoom: 1; }
 
-/*	--------------------------------------------------
-:: Block grids
+/* --------------------------------------------------
+Block grids
 
 These are 2-up, 3-up, 4-up and 5-up ULs, suited
 for repeating blocks of content. Add 'mobile' to
@@ -583,45 +583,45 @@ that IE7/8 do not support :nth-child.
 
 .block-grid > li {
   display: block;
-  height: auto;
-  float: left; }
+  float: left;
+  height: auto; }
 
 .block-grid.two-up {
   margin-left: -4%; }
 
 .block-grid.two-up > li {
+  margin-bottom: 4%;
   margin-left: 4%;
-  width: 46%;
-  margin-bottom: 4%; }
+  width: 46%; }
 
-/* .block-grid.two-up>li:nth-child(2n+1) {clear: left;} */
+/* .block-grid.two-up > li:nth-child(2n+1) {clear: left;} */
 .block-grid.three-up {
   margin-left: -2%; }
 
 .block-grid.three-up > li {
+  margin-bottom: 2%;
   margin-left: 2%;
-  width: 31.2%;
-  margin-bottom: 2%; }
+  width: 31.2%; }
 
-/* .block-grid.three-up>li:nth-child(3n+1) {clear: left;} */
+/* .block-grid.three-up > li:nth-child(3n+1) {clear: left;} */
 .block-grid.four-up {
   margin-left: -2%; }
 
 .block-grid.four-up > li {
+  margin-bottom: 2%;
   margin-left: 2%;
-  width: 23%;
-  margin-bottom: 2%; }
+  width: 23%; }
 
-/* .block-grid.four-up>li:nth-child(4n+1) {clear: left;} */
+/* .block-grid.four-up > li:nth-child(4n+1) {clear: left;} */
 .block-grid.five-up {
   margin-left: -1.5%; }
 
 .block-grid.five-up > li {
+  margin-bottom: 1.5%;
   margin-left: 1.5%;
-  width: 18.5%;
-  margin-bottom: 1.5%; }
+  width: 18.5%; }
 
-/* .block-grid.five-up>li:nth-child(5n+1) {clear: left;} */
+/* .block-grid.five-up > li:nth-child(5n+1) {clear: left;} */
 /* --------------------------------------------------
 Buttons
 -------------------------------------------------- */
