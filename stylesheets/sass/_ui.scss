@@ -3,21 +3,21 @@ Buttons
 -------------------------------------------------- */
 .button {
   background: $blue;
-  @include inline-block;
-  text-align: center;
-  padding: 9px 34px 11px;
+  border: none;
   color: $white;
-  text-decoration: none;
-  font-weight: bold;
+  cursor: pointer;
+  @include inline-block;
+  font-family: "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif;
   font-size: 13px;
   font-size: 1.3rem;
+  font-weight: bold;
   line-height: 1;
-  font-family: "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif;
-  position: relative;
-  cursor: pointer;
-  border: none;
-  outline: none;
   margin: 0;
+  outline: none;
+  padding: 9px 34px 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
 }
 /* Don't use native buttons on iOS */
 input[type=submit].button, button.button {
@@ -30,7 +30,7 @@ input[type="reset"]::-moz-focus-inner,
 input[type="button"]::-moz-focus-inner,
 input[type="submit"]::-moz-focus-inner,
 input[type="file"] > input[type="button"]::-moz-focus-inner {
- border: none;
+  border: none;
 }
 .button.nice {
   background-color: $blue;
@@ -47,10 +47,10 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
   @include border-radius(1000px);
 }
 .button.full-width {
-  width: 100%;
   padding-left: 0 !important;
   padding-right: 0 !important;
   text-align: center;
+  width: 100%;
 }
 .button.left-align {
   text-align: left;
@@ -95,7 +95,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 .white.button {
   background-color: $gray05;
-  color: #333;
+  color: $gray20;
 }
 .black.button {
   background-color: $gray95;
@@ -124,7 +124,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .button:hover,
 .button:focus {
   background-color: darken($blue, 10%);
-  color: #fff;
+  color: $white;
 }
 .blue.button:hover,
 .blue.button:focus {
@@ -137,7 +137,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .white.button:hover,
 .white.button:focus {
   background-color: darken($gray05, 10%);
-  color: #333;
+  color: $gray80;
 }
 .black.button:hover,
 .black.button:focus {
@@ -154,13 +154,14 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 /* Disabled ---------- */
 .button.disabled,
 .button[disabled] {
-  @include opacity(0.6);
   cursor: default;
+  @include opacity(0.6);
 }
 
 /* Correct FF button padding */
 @-moz-document url-prefix("http://") {
-  input[type=submit].button::-moz-focus-inner,  button.button::-moz-focus-inner {
+  input[type=submit].button::-moz-focus-inner,
+  button.button::-moz-focus-inner {
     border: 0;
     padding: 0;
   }
@@ -180,18 +181,17 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 /* --------------------------------------------------
 Alerts
 -------------------------------------------------- */
-
 div.alert-box {
-  display: block;
-  padding: 6px 7px;
-  font-weight: bold;
-  font-size: 13px;
   background: $gray10;
   border: 1px solid rgba($black, 0.1);
-  margin-bottom: 12px;
   @include border-radius(3px);
-  text-shadow: 0 1px rgba($white, 0.9);
+  display: block;
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 12px;
+  padding: 6px 7px;
   position: relative;
+  text-shadow: 0 1px rgba($white, 0.9);
 }
 .alert-box.success {
   background-color: lighten($green, 15%);
@@ -210,12 +210,12 @@ div.alert-box {
 }
 .alert-box a.close {
   color: $black;
-  position: absolute;
-  right: 4px;
-  top: 0;
   font-size: 18px;
   @include opacity(0.2);
   padding: 4px;
+  position: absolute;
+  right: 4px;
+  top: 0;
 }
 .alert-box a.close:hover,
 .alert-box a.close:focus {
@@ -224,27 +224,26 @@ div.alert-box {
 /* --------------------------------------------------
 Labels
 -------------------------------------------------- */
-
 .label {
-  padding: 0 4px 2px;
-  font-size: 11px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  line-height: 1;
-  white-space: nowrap;
-  display: inline;
-  position: relative;
+  background: $blue;
   bottom: 1px;
   color: $white;
-  background: $blue;
+  display: inline;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1;
+  padding: 0 4px 2px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
 }
 .label.radius {
   @include border-radius(2px);
 }
 .label.round {
-  padding: 1px 7px 2px;
   @include border-radius(8px);
+  padding: 1px 7px 2px;
 }
 /* Colors ---------- */
 .blue.label {
@@ -258,53 +257,54 @@ Labels
 }
 .white.label {
   background-color: $gray05;
-  color: #333;
+  color: $gray80;
 }
 .black.label {
   background-color: $gray95;
 }
+
 /* --------------------------------------------------
 Tabs
 -------------------------------------------------- */
 dl.tabs {
+  border-bottom: solid 1px $gray15;
   display: block;
+  height: 30px;
   margin: 0 0 20px 0;
   padding: 0;
-  height: 30px;
-  border-bottom: solid 1px $gray15;
 }
 dl.tabs dt {
-  display: block;
-  width: auto;
-  height: 30px;
-  padding: 0 9px 0 20px;
-  line-height: 30px;
-  float: left;
   color: $gray40;
-  font-size: 11px;
-  text-transform: uppercase;
   cursor: default;
+  display: block;
+  float: left;
+  font-size: 11px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 9px 0 20px;
+  text-transform: uppercase;
+  width: auto;
 }
 dl.tabs dt:first-child {
   padding: 0 9px 0 0;
 }
 dl.tabs dd {
   display: block;
-  width: auto;
+  float: left;
   height: 30px;
   padding: 0;
-  float: left;
+  width: auto;
 }
 dl.tabs dd a {
-  display: block;
-  width: auto;
-  height: 29px;
-  padding: 0 9px;
-  line-height: 30px;
-  border: solid 1px $gray15;
-  margin: 0 -1px 0 0;
-  color: $gray65;
   background: $gray10;
+  border: solid 1px $gray15;
+  color: $gray65;
+  display: block;
+  height: 29px;
+  line-height: 30px;
+  margin: 0 -1px 0 0;
+  padding: 0 9px;
+  width: auto;
 }
 dl.tabs dd a.active {
   background: $white;
@@ -313,24 +313,24 @@ dl.tabs dd a.active {
 }
 .nice.tabs {
   border-bottom: solid 1px $gray10;
+  height: 43px;
   margin: 0 0 30px 0;
-  height:43px;
 }
 .nice.tabs dd a {
-  padding: 7px 18px 9px;
-  font-size: 15px;
-  font-size: 1.5rem;
-  color: $gray65;
   background: none;
   border: none;
+  color: $gray65;
+  font-size: 15px;
+  font-size: 1.5rem;
+  padding: 7px 18px 9px;
 }
 .nice.tabs dd a.active {
-  font-weight: bold;
-  color: $gray80;
   background: $white;
   border-left: 1px solid $gray10;
   border-right: 1px solid $gray10;
   border-top: 3px solid $blue;
+  color: $gray80;
+  font-weight: bold;
   margin: 0 10px;
   position: relative;
   top: -5px;
@@ -349,52 +349,52 @@ dl.nice.tabs.vertical dd {
   height: auto;
 }
 dl.tabs.vertical dd a {
-  display: block;
-  width: auto;
-  height: auto;
-  padding: 15px 20px;
-  line-height: 1;
+  background: $gray10;
   border: solid 0 $gray20;
   border-width: 1px 1px 0;
-  margin: 0;
   color: $gray65;
-  background: $gray10;
+  display: block;
   font-size: 15px;
   font-size: 1.5rem;
+  height: auto;
+  line-height: 1;
+  margin: 0;
+  padding: 15px 20px;
+  width: auto;
 }
 dl.tabs.vertical dd a.active {
+  background: $gray10;
+  border-width: 1px 0 0;
   height: auto;
   margin: 0;
-  border-width: 1px 0 0;
-  background: $gray10;
 }
 .nice.tabs.vertical {
   border-bottom: solid 1px $gray10;
   height: auto;
 }
 .nice.tabs.vertical dd a {
-  padding: 15px 20px;
+  background: $white;
   border: none;
   border-left: 1px solid $gray10;
   border-right: 1px solid $gray10;
   border-top: 1px solid $gray10;
-  background: $white;
+  padding: 15px 20px;
 }
 .nice.tabs.vertical dd a.active {
-  border: none;
   background: $blue;
+  border: none;
   color: $white;
+  height: auto;
   margin: 0;
   position: static;
   top: 0;
-  height: auto;
 }
 .nice.tabs.vertical dd:first-child a.active {
   margin: 0;
 }
 ul.tabs-content {
-  margin: 0;
   display: block;
+  margin: 0;
 }
 ul.tabs-content > li {
   display: none;
@@ -418,17 +418,18 @@ dl.nice.contained.tabs dd a {
 ul.contained.tabs-content {
   padding: 0;
 }
-ul.contained.tabs-content>li {
-  padding: 20px;
+ul.contained.tabs-content > li {
   border: solid 0 $gray15;
   border-width: 0 1px 1px 1px;
+  padding: 20px;
 }
-ul.contained.vertical.tabs-content>li {
+ul.contained.vertical.tabs-content > li {
   border-width: 1px 1px 1px 1px;
 }
-ul.nice.contained.tabs-content>li {
+ul.nice.contained.tabs-content > li {
   border-color: $gray10;
 }
+
 /* --------------------------------------------------
 Pagination
 -------------------------------------------------- */
@@ -438,17 +439,17 @@ ul.pagination {
   margin-left: -5px;
 }
 ul.pagination li {
-  float: left;
-  display: block;
-  height: 24px;
   color: $gray40;
+  display: block;
+  float: left;
   font-size: 15px;
+  height: 24px;
   margin-left: 5px;
 }
 ul.pagination li a {
+  color: $gray65;
   display: block;
   padding: 6px 7px 4px;
-  color: $gray65;
 }
 ul.pagination li.current a,
 ul.pagination li:hover a,
@@ -457,34 +458,35 @@ ul.pagination li a:focus {
   color: $gray90;
 }
 ul.pagination li.unavailable a {
-  cursor: default;
   color: $gray40;
+  cursor: default;
 }
 ul.pagination li.unavailable:hover a,
 ul.pagination li.unavailable a:focus {
   border-bottom: none;
 }
+
 /* --------------------------------------------------
 Breadcrumbs
 -------------------------------------------------- */
 ul.breadcrumbs {
-  display: block;
   background: $gray05;
-  padding: 7px 10px;
   border: 1px solid $gray15;
   border-radius: 2px;
+  display: block;
   overflow: hidden;
+  padding: 7px 10px;
 }
 ul.breadcrumbs li {
+  float: left;
   margin: 0;
   padding: 0 12px 0 0;
-  float: left;
 }
 ul.breadcrumbs li a,
 ul.breadcrumbs li span {
-  text-transform: uppercase;
   font-size: 11px;
   padding-left: 12px;
+  text-transform: uppercase;
 }
 ul.breadcrumbs li:first-child a,
 ul.breadcrumbs li:first-child span {
@@ -498,8 +500,8 @@ ul.breadcrumbs li:first-child:before {
   content: " ";
 }
 ul.breadcrumbs li.current a {
-  cursor: default;
   color: $gray40;
+  cursor: default;
 }
 ul.breadcrumbs li:hover a,
 ul.breadcrumbs li a:focus {
@@ -514,10 +516,11 @@ ul.breadcrumbs li.unavailable a {
 }
 ul.breadcrumbs li.unavailable:hover a,
 ul.pagination li.unavailable a:focus {
-  text-decoration: none;
   color: $gray40;
   cursor: default;
+  text-decoration: none;
 }
+
 /* --------------------------------------------------
 Lists
 -------------------------------------------------- */
@@ -533,11 +536,12 @@ ol.nice li {
 }
 ul.nice li span.bullet,
 ol.nice li span.number {
-  position: absolute;
-  left: 0;
-  top: 0;
   color: $gray20;
+  left: 0;
+  position: absolute;
+  top: 0;
 }
+
 /* --------------------------------------------------
 Panels
 -------------------------------------------------- */
@@ -548,31 +552,32 @@ div.panel {
   margin: 0 0 20px 0;
   padding: 20px 20px 2px 20px;
 }
+
 /* --------------------------------------------------
 Nav Bar with Dropdowns
 -------------------------------------------------- */
 .nav-bar {
-  height: 45px;
   background: $white;
-  margin-top: 20px;
   border: 1px solid $gray15;
+  height: 45px;
+  margin-top: 20px;
 }
 .nav-bar > li {
-  float: left;
-  display: block;
-  position: relative;
-  padding: 0;
-  margin: 0;
   border-right: 1px solid $gray15;
+  display: block;
+  float: left;
   line-height: 45px;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
 .nav-bar > li > a.main {
-  position: relative;
-  padding: 0 20px;
   display: block;
-  text-decoration: none;
   font-size: 15px;
   font-size: 1.5rem;
+  padding: 0 20px;
+  position: relative;
+  text-decoration: none;
 }
 .nav-bar > li > input {
   margin: 0 16px;
@@ -587,30 +592,30 @@ Nav Bar with Dropdowns
   padding-right: 36px;
 }
 .nav-bar > li.has-flyout > a.flyout-toggle {
+  display: block;
+  padding: 22px;
   position: absolute;
   right: 0;
   top: 0;
-  padding: 22px;
   z-index: 2;
-  display: block;
 }
 .nav-bar > li.has-flyout > a.flyout-toggle span {
-  content: "";
-  width: 0;
-  height: 0;
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
   border-top: 4px solid $blueDark;
+  content: "";
   display: block;
+  height: 0;
+  width: 0;
 }
 .flyout {
   background: $white;
+  border: 1px solid $gray15;
+  left: -1px;
   margin: 0;
   padding: 20px;
-  border: 1px solid $gray15;
   position: absolute;
   top: 45px;
-  left: -1px;
   width: 400px;
   z-index: 40;
 }
@@ -630,21 +635,21 @@ Nav Bar with Dropdowns
 .nav-bar > li .flyout {
   display: none;
 }
+
 /* --------------------------------------------------
 Sub Navs
-http://www.zurb.com/article/292/how-to-create-simple-and-effective-sub-na
 -------------------------------------------------- */
 dl.sub-nav {
   display: block;
-  width: auto;
-  overflow: hidden;
   margin: -4px 0 18px -9px;
+  overflow: hidden;
   padding-top: 4px;
+  width: auto;
 }
 dl.sub-nav dt,
 dl.sub-nav dd {
-  float: left;
   display: inline;
+  float: left;
   margin-left: 9px;
   margin-bottom: 4px;
 }
@@ -653,8 +658,8 @@ dl.sub-nav dt {
   font-weight: normal;
 }
 dl.sub-nav dd a {
-  text-decoration: none;
   border-radius: 12px;
+  text-decoration: none;
 }
 dl.sub-nav dd.active a {
   background: $blue;
@@ -664,15 +669,14 @@ dl.sub-nav dd.active a {
 
 /* --------------------------------------------------
 Video
-Mad props to http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
 -------------------------------------------------- */
 .flex-video {
-  position: relative;
-  padding-top: 25px;
-  padding-bottom: 67.5%;
   height: 0;
   margin-bottom: 16px;
   overflow: hidden;
+  padding-top: 25px;
+  padding-bottom: 67.5%;
+  position: relative;
 }
 .flex-video.widescreen {
   padding-bottom: 57.25%;
@@ -683,11 +687,11 @@ Mad props to http://www.alistapart.com/articles/creating-intrinsic-ratios-for-vi
 .flex-video iframe,
 .flex-video object,
 .flex-video embed {
+  height: 100%;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
 }
 
 /* --------------------------------------------------
@@ -695,29 +699,29 @@ Microformats
 -------------------------------------------------- */
 /* hCard */
 ul.vcard {
+  border: 1px solid $gray15;
   @include inline-block;
   margin: 0 0 12px 0;
-  border: 1px solid $gray15;
   padding: 10px;
 }
 ul.vcard li {
-  margin: 0;
   display: block;
+  margin: 0;
 }
 ul.vcard li.fn {
-  font-weight: bold;
   font-size: 15px;
   font-size: 1.5rem;
+  font-weight: bold;
 }
 p.vevent span.summary {
   font-weight: bold;
 }
 p.vevent abbr {
-  cursor: default;
-  text-decoration: none;
-  font-weight: bold;
   border: none;
+  cursor: default;
+  font-weight: bold;
   padding: 0 1px;
+  text-decoration: none;
 }
 
 /* --------------------------------------------------
@@ -725,38 +729,38 @@ Tooltips
 -------------------------------------------------- */
 .has-tip {
   border-bottom: dotted 1px $gray20;
+  color: $gray80;
   cursor: help;
   font-weight: bold;
-  color: $gray80;
 }
 .has-tip:hover {
   border-bottom: dotted 1px lighten($blue, 10%);
   color: $blueDark;
 }
 .tooltip {
-  display: none;
   background: $black;
   background: rgba($black, 0.8);
-  position: absolute;
+  @include border-radius(4px);
   color: $white;
-  font-weight: bold;
+  display: none;
   font-size: 12px;
   font-size: 1.2rem;
-  padding: 5px;
-  z-index: 999;
-  @include border-radius(4px);
+  font-weight: bold;
   line-height: normal;
+  padding: 5px;
+  position: absolute;
+  z-index: 999;
 }
 .tooltip > .nub {
-  display: block;
-  width: 0;
-  height: 0;
   border: solid 5px;
   border-color: transparent transparent $black transparent;
   border-color: transparent transparent rgba($black, 0.8) transparent;
+  display: block;
+  height: 0;
+  left: 10px;
   position: absolute;
   top: -10px;
-  left: 10px;
+  width: 0;
 }
 .tooltip.tip-override > .nub {
   border-color: transparent transparent $black transparent !important;
@@ -766,8 +770,8 @@ Tooltips
 .tooltip.tip-top > .nub {
   border-color: $black transparent transparent transparent;
   border-color: rgba($black, 0.8) transparent transparent transparent;
-  top: auto;
   bottom: -10px;
+  top: auto;
 }
 .tooltip.tip-left,
 .tooltip.tip-right,
@@ -778,26 +782,26 @@ Tooltips
 .tooltip.tip-left > .nub {
   border-color: transparent transparent transparent $black;
   border-color: transparent transparent transparent rgba($black, 0.8);
-  right: -10px;
   left: auto;
+  right: -10px;
 }
 .tooltip.tip-right > .nub {
   border-color: transparent $black transparent transparent;
   border-color: transparent rgba($black, 0.8) transparent transparent;
-  right: auto;
   left: -10px;
+  right: auto;
 }
 .tooltip.noradius {
   @include border-radius(0);
 }
 .has-tip.opened {
-  color: lighten($blue, 10%) !important;
   border-bottom: dotted 1px $blueDark !important;
+  color: lighten($blue, 10%) !important;
 }
 .tap-to-close {
+  color: $gray45;
   display: block;
   font-size: 10px;
   font-size: 1.0rem;
-  color: $gray45;
   font-weight: normal;
 }
