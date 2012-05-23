@@ -1,5 +1,5 @@
 /* --------------------------------------------------
-  :: Typography
+Typography
 -------------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
   color: $gray90;
@@ -60,8 +60,7 @@ p.lead {
   line-height: 1.5;
 }
 em, i {
-  font-style:
-  italic;
+  font-style: italic;
   line-height: inherit;
 }
 strong, b {
@@ -79,19 +78,19 @@ h1 small, h2 small, h3 small, h4 small, h5 small {
 /*	Blockquotes  */
 blockquote,
 blockquote p {
-  line-height: 20px;
   color: $gray50;
+  line-height: 20px;
 }
 blockquote {
+  border-left: 1px solid $gray15;
   margin: 0 0 18px;
   padding: 9px 20px 0 19px;
-  border-left: 1px solid $gray15;
 }
 blockquote cite {
+  color: $gray65;
   display: block;
   font-size: 12px;
   font-size: 1.2rem;
-  color: $gray65;
 }
 blockquote cite:before {
   content: "\2014 \0020";
@@ -104,16 +103,16 @@ hr {
   border: solid $gray15;
   border-width: 1px 0 0;
   clear: both;
-  margin: 12px 0 18px;
   height: 0;
+  margin: 12px 0 18px;
 }
 abbr,
 acronym {
-  text-transform: uppercase;
-  font-size: 90%;
-  color: $gray90;
   border-bottom: 1px solid $gray15;
+  color: $gray90;
   cursor: help;
+  font-size: 90%;
+  text-transform: uppercase;
 }
 abbr {
   text-transform: none;

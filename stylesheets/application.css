@@ -210,7 +210,7 @@ embed {
   max-width: none; }
 
 /* --------------------------------------------------
-  :: Typography
+Typography
 -------------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
   color: #191919;
@@ -288,19 +288,19 @@ h1 small, h2 small, h3 small, h4 small, h5 small {
 /*	Blockquotes  */
 blockquote,
 blockquote p {
-  line-height: 20px;
-  color: #7f7f7f; }
+  color: #7f7f7f;
+  line-height: 20px; }
 
 blockquote {
+  border-left: 1px solid #d9d9d9;
   margin: 0 0 18px;
-  padding: 9px 20px 0 19px;
-  border-left: 1px solid #d9d9d9; }
+  padding: 9px 20px 0 19px; }
 
 blockquote cite {
+  color: #595959;
   display: block;
   font-size: 12px;
-  font-size: 1.2rem;
-  color: #595959; }
+  font-size: 1.2rem; }
 
 blockquote cite:before {
   content: "\2014 \0020"; }
@@ -313,16 +313,16 @@ hr {
   border: solid #d9d9d9;
   border-width: 1px 0 0;
   clear: both;
-  margin: 12px 0 18px;
-  height: 0; }
+  height: 0;
+  margin: 12px 0 18px; }
 
 abbr,
 acronym {
-  text-transform: uppercase;
-  font-size: 90%;
-  color: #191919;
   border-bottom: 1px solid #d9d9d9;
-  cursor: help; }
+  color: #191919;
+  cursor: help;
+  font-size: 90%;
+  text-transform: uppercase; }
 
 abbr {
   text-transform: none; }
@@ -2126,25 +2126,17 @@ div.caption {
 Reveal Modals
 -------------------------------------------------- */
 .reveal-modal-bg {
-  position: fixed;
-  height: 100%;
-  width: 100%;
   background: black;
-  z-index: 40;
   display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
   top: 0;
-  left: 0; }
+  width: 100%;
+  z-index: 40; }
 
 .reveal-modal {
-  visibility: hidden;
-  top: 100px;
-  left: 50%;
-  margin-left: -300px;
-  width: 520px;
   background: #e5e5e5 url(../images/misc/modal-gloss.png) no-repeat -200px -80px;
-  position: absolute;
-  z-index: 41;
-  padding: 30px 40px 34px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
@@ -2152,34 +2144,42 @@ Reveal Modals
   border-radius: 5px;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); }
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  left: 50%;
+  margin-left: -300px;
+  padding: 30px 40px 34px;
+  position: absolute;
+  top: 100px;
+  visibility: hidden;
+  width: 520px;
+  z-index: 41; }
 
 .reveal-modal.small {
-  width: 200px;
-  margin-left: -140px; }
+  margin-left: -140px;
+  width: 200px; }
 
 .reveal-modal.medium {
-  width: 400px;
-  margin-left: -240px; }
+  margin-left: -240px;
+  width: 400px; }
 
 .reveal-modal.large {
-  width: 600px;
-  margin-left: -340px; }
+  margin-left: -340px;
+  width: 600px; }
 
 .reveal-modal.xlarge {
-  width: 800px;
-  margin-left: -440px; }
+  margin-left: -440px;
+  width: 800px; }
 
 .reveal-modal .close-reveal-modal {
+  color: #a6a6a6;
+  cursor: pointer;
   font-size: 22px;
+  font-weight: bold;
   line-height: .5;
   position: absolute;
-  top: 8px;
   right: 11px;
-  color: #a6a6a6;
   text-shadow: 0 -1px 1px rbga(black, 0.6);
-  font-weight: bold;
-  cursor: pointer; }
+  top: 8px; }
 
 .reveal-modal .row {
   min-width: 0; }
@@ -2194,12 +2194,12 @@ Reveal Modals
   .reveal-modal.medium,
   .reveal-modal.large,
   .reveal-modal.xlarge {
-    width: 60%;
-    top: 60px;
+    height: auto;
     left: 15%;
     margin-left: 0;
     padding: 20px;
-    height: auto; } }
+    top: 60px;
+    width: 60%; } }
 @media handheld, only screen and (max-width: 767px) {
   .reveal-modal-bg {
     position: absolute; }
@@ -2209,12 +2209,12 @@ Reveal Modals
   .reveal-modal.medium,
   .reveal-modal.large,
   .reveal-modal.xlarge {
-    width: 80%;
-    top: 15px;
+    height: auto;
     left: 5%;
     margin-left: 0;
     padding: 20px;
-    height: auto; } }
+    top: 15px;
+    width: 80%; } }
 /*
   NOTES
   Close button entity is &#215;

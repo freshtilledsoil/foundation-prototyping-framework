@@ -2,54 +2,54 @@
 Reveal Modals
 -------------------------------------------------- */
 .reveal-modal-bg {
-  position: fixed;
-  height: 100%;
-  width: 100%;
   background: $black;
-  z-index: 40;
   display: none;
-  top: 0;
+  height: 100%;
   left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 40;
 }
 .reveal-modal {
-  visibility: hidden;
-  top: 100px;
-  left: 50%;
-  margin-left: -300px;
-  width: 520px;
   background: $gray10 url(../images/misc/modal-gloss.png) no-repeat -200px -80px;
-  position: absolute;
-  z-index: 41;
-  padding: 30px 40px 34px;
   @include border-radius(5px);
   @include box-shadow(0 0 10px rgba($black, 0.4));
+  left: 50%;
+  margin-left: -300px;
+  padding: 30px 40px 34px;
+  position: absolute;
+  top: 100px;
+  visibility: hidden;
+  width: 520px;
+  z-index: 41;
 }
 .reveal-modal.small {
-  width: 200px;
   margin-left: -140px;
+  width: 200px;
 }
 .reveal-modal.medium {
-  width: 400px;
   margin-left: -240px;
+  width: 400px;
 }
 .reveal-modal.large {
-  width: 600px;
   margin-left: -340px;
+  width: 600px;
 }
 .reveal-modal.xlarge {
-  width: 800px;
   margin-left: -440px;
+  width: 800px;
 }
 .reveal-modal .close-reveal-modal {
+  color: $gray35;
+  cursor: pointer;
   font-size: 22px;
+  font-weight: bold;
   line-height: .5;
   position: absolute;
-  top: 8px;
   right: 11px;
-  color: $gray35;
   text-shadow: 0 -1px 1px rbga($black, 0.6);
-  font-weight: bold;
-  cursor: pointer;
+  top: 8px;
 }
 .reveal-modal .row {
   min-width: 0;
@@ -65,12 +65,12 @@ Reveal Modals
   .reveal-modal.medium,
   .reveal-modal.large,
   .reveal-modal.xlarge {
-    width: 60%;
-    top: 60px;
+    height: auto;
     left: 15%;
     margin-left: 0;
     padding: 20px;
-    height: auto;
+    top: 60px;
+    width: 60%;
   }
 }
 @media handheld, only screen and (max-width: 767px) {
@@ -82,12 +82,12 @@ Reveal Modals
   .reveal-modal.medium,
   .reveal-modal.large,
   .reveal-modal.xlarge {
-    width: 80%;
-    top: 15px;
+    height: auto;
     left: 5%;
     margin-left: 0;
     padding: 20px;
-    height: auto;
+    top: 15px;
+    width: 80%;
   }
 }
 
